@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bootstrap-select test page</title>
+
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrapselect/dist/css/bootstrap-select.css">
+  <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+
+  
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="bootstrapselect/dist/js/bootstrap-select.js"></script>
+  <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('#myTable').dataTable();
+});
+</script>
+<script type="text/javascript">  
+$(document).ready(function(){ 
+    $("#myButtons .btn").click(function(){
+        $(this).button('loading').delay(1000).queue(function() {
+            $(this).button('reset');
+            $(this).dequeue();
+        });        
+    });
+});   
+</script>
+<style type="text/css">
+  .bs-example{
+      margin: 20px;
+    }
+</style>
+<style type="text/css">
+  .table-responsive{
+      margin: 20px;
+    }
+</style>
+
+<style type="text/css">.hidden{display:none}</style>
+
+</head>
+<body>
+ <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Referme.in</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">All Contacts <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>-->
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi,Admin <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<hr>
+<h2  style="margin:35px">ALL CONTACTS <small>view all available contacts</small></h2>
+<hr>
+
+  
+<div id="myButtons" class="bs-example" align="right">
+    <form action="#" autocomplete="off">
+        
+        <button type="button" class="btn btn-primary">Refresh</button>
+    </form>
+</div>
+
+
+
+<div class="table-responsive">
+<table id="myTable" class="table table-fluid table-hover" width="100%" >
+
+    <caption class="bg-success"><h4>Contacts Table</h4></caption> 
+        <thead>  
+          <tr>  
+            <th>Updated on</th>  
+            <th>Name</th>
+            <th>Email</th>
+            <th>phone</th>
+            <th>Designation</th>  
+            <th>Department</th>  
+            <th>Company</th>
+            <th>Location</th> 
+            <th>category</th> 
+            <th>updated by</th>  
+            <th>Status</th>  
+          </tr>  
+        </thead>  
+        <tbody>  
+          <tr>  
+            <td><span class="hidden">2016/05/21</span>21/05/2016</td>
+            <td>mark</td>   
+            <td>mark@gmail.com</td>  
+            <td>9000000012</td>  
+            <td>Manager</td>  
+            <td>Marketing</td>  
+            <td>TCS</td>
+            <td>Chennai</td>  
+            <td><select class="form-control">
+    <option value="one">One</option>
+    <option value="two">Two</option>
+    <option value="three">Three</option>
+</select></td>
+            <td>Tony</td>  
+            <td><select class="form-control selectpicker">
+    <option data-content="<span class='label label-success'>Active</span>">Active</option>
+    <option data-content="<span class='label label-danger'>In-active</span>">In-active</option>
+    
+  </select></td>  
+          
+          </tr>  
+          <tr>  
+            <td><span class="hidden">2016/05/21</span>21/05/2016</td>
+            <td>john</td>   
+            <td>john@gmail.com</td>  
+            <td>9000000012</td>  
+            <td>ceo</td>  
+            <td>sales</td>  
+            <td>TCS</td>
+            <td>Chennai</td>  
+            <td><select class="form-control">
+    <option value="one">One</option>
+    <option value="two">Two</option>
+    <option value="three">Three</option>
+</select></td>
+            <td>Tony</td>  
+            <td><select class="form-control">
+    <option value="one">Active</option>
+    <option value="two">De-Active</option>
+</select></td>  
+          
+          </tr>  
+          <tr>  
+            <td><span class="hidden">2016/05/21</span>21/05/2016</td>
+            <td>ramu</td>   
+            <td>ramu@gmail.com</td>  
+            <td>9000000012</td>  
+            <td>staff</td>  
+            <td>Marketing</td>  
+            <td>cts</td>
+            <td>bangalore</td>  
+            <td><select class="form-control">
+    <option value="one">One</option>
+    <option value="two">Two</option>
+    <option value="three">Three</option>
+</select></td>
+            <td>Tony</td>  
+            <td><select class="form-control">
+    <option value="one">Active</option>
+    <option value="two">De-Active</option>
+</select></td>  
+          
+         </tr>  
+          <tr>  
+            <td><span class="hidden">2016/05/23</span>23/05/2016</td>
+            <td>vivek</td>   
+            <td>mark@gmail.com</td>  
+            <td>9000000012</td>  
+            <td>sales rep</td>  
+            <td>sales</td>  
+            <td>TCS</td>
+            <td>Chennai</td>  
+            <td><select class="form-control">
+    <option value="one">One</option>
+    <option value="two">Two</option>
+    <option value="three">Three</option>
+</select></td>
+            <td>Tony</td>  
+            <td><select class="form-control">
+    <option value="one">Active</option>
+    <option value="two">De-Active</option>
+</select></td>  
+          
+        </tr>  
+        </tr>  
+          <tr>  
+            <td><span class="hidden">2016/05/22</span>22/05/2016</td>
+            <td>mark</td>   
+            <td>mark@gmail.com</td>  
+            <td>9000000012</td>  
+            <td>Manager</td>  
+            <td>Marketing</td>  
+            <td>TCS</td>
+            <td>Chennai</td>  
+            <td><select class="form-control">
+    <option value="one">One</option>
+    <option value="two">Two</option>
+    <option value="three">Three</option>
+</select></td>
+            <td>Tony</td>  
+            <td><select class="form-control">
+    <option value="one">Active</option>
+    <option value="two">De-Active</option>
+</select></td>  
+          
+        </tr>  
+        </tr>  
+          <tr>  
+            <td><span class="hidden">2016/05/21</span>21/05/2016</td>
+            <td>mark</td>   
+            <td>mark@gmail.com</td>  
+            <td>9000000012</td>  
+            <td>Manager</td>  
+            <td>Marketing</td>  
+            <td>TCS</td>
+            <td>Chennai</td>  
+            <td><select class="form-control">
+    <option value="one">One</option>
+    <option value="two">Two</option>
+    <option value="three">Three</option>
+</select></td>
+            <td>Tony</td>  
+            <td><select class="form-control">
+    <option value="one">Active</option>
+    <option value="two">De-Active</option>
+</select></td>  
+          
+        </tr>  
+        </tr>  
+          <tr>  
+            <td><span class="hidden">2016/05/24</span>24/05/2016</td>
+            <td>mark</td>   
+            <td>mark@gmail.com</td>  
+            <td>9000000012</td>  
+            <td>Manager</td>  
+            <td>Marketing</td>  
+            <td>TCS</td>
+            <td>Chennai</td>  
+            <td><select class="form-control">
+    <option value="one">One</option>
+    <option value="two">Two</option>
+    <option value="three">Three</option>
+</select></td>
+            <td>Tony</td>  
+            <td><select class="form-control">
+    <option value="one">Active</option>
+    <option value="two">De-Active</option>
+</select></td>  
+          
+        </tr>  
+        </tr>  
+          <tr>  
+            <td><span class="hidden">2016/05/25</span>25/05/2016</td>
+            <td>mark</td>   
+            <td>mark@gmail.com</td>  
+            <td>9000000012</td>  
+            <td>Manager</td>  
+            <td>Marketing</td>  
+            <td>TCS</td>
+            <td>Chennai</td>  
+            <td><select class="form-control">
+    <option value="one">One</option>
+    <option value="two">Two</option>
+    <option value="three">Three</option>
+</select></td>
+            <td>Tony</td>  
+            <td><select class="form-control">
+    <option value="one">Active</option>
+    <option value="two">De-Active</option>
+</select></td>  
+          
+        </tr>  
+        </tr>  
+          <tr>  
+            <td><span class="hidden">2016/05/21</span>21/05/2016</td>
+            <td>mark</td>   
+            <td>mark@gmail.com</td>  
+            <td>9000000012</td>  
+            <td>Manager</td>  
+            <td>Marketing</td>  
+            <td>TCS</td>
+            <td>Chennai</td>  
+            <td><select class="form-control">
+    <option value="one">One</option>
+    <option value="two">Two</option>
+    <option value="three">Three</option>
+</select></td>
+            <td>Tony</td>  
+            <td><select class="form-control">
+    <option value="one">Active</option>
+    <option value="two">De-Active</option>
+</select></td>  
+          
+        </tr>  
+        </tr>  
+          <tr>  
+            <td><span class="hidden">2016/05/28</span>28/05/2016</td>
+            <td>mark</td>   
+            <td>mark@gmail.com</td>  
+            <td>9000000012</td>  
+            <td>Manager</td>  
+            <td>Marketing</td>  
+            <td>TCS</td>
+            <td>Chennai</td>  
+            <td><select class="form-control">
+    <option value="one">One</option>
+    <option value="two">Two</option>
+    <option value="three">Three</option>
+</select></td>
+            <td>Tony</td>  
+            <td><select class="form-control">
+    <option value="one">Active</option>
+    <option value="two">De-Active</option>
+</select></td>  
+          
+        </tr>  
+        </tr>  
+          <tr>  
+            <td><span class="hidden">2016/07/21</span>21/07/2016</td>
+            <td>mark</td>   
+            <td>mark@gmail.com</td>  
+            <td>9000000012</td>  
+            <td>Manager</td>  
+            <td>Marketing</td>  
+            <td>TCS</td>
+            <td>Chennai</td>  
+            <td><select class="form-control">
+    <option value="one">One</option>
+    <option value="two">Two</option>
+    <option value="three">Three</option>
+</select></td>
+            <td>Tony</td>  
+            <td><select class="form-control">
+    <option value="one">Active</option>
+    <option value="two">De-Active</option>
+</select></td>  
+          
+        </tr>  
+        </tr>  
+          <tr>  
+            <td><span class="hidden">2016/08/21</span>21/08/2016</td>
+            <td>mark</td>   
+            <td>mark@gmail.com</td>  
+            <td>9000000012</td>  
+            <td>Manager</td>  
+            <td>Marketing</td>  
+            <td>TCS</td>
+            <td>Chennai</td>  
+            <td><select class="form-control">
+    <option value="one">One</option>
+    <option value="two">Two</option>
+    <option value="three">Three</option>
+</select></td>
+            <td>Tony</td>  
+            <td><select class="form-control">
+    <option value="one">Active</option>
+    <option value="two">De-Active</option>
+</select></td>  
+          
+        </tr>  
+          
+        </tbody>  
+      </table>
+</div>
+
+</body>
+</html>                 
